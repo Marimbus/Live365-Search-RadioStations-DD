@@ -23,15 +23,16 @@ public class Live365SearchTEST extends SeleniumBase{
 	private final String MAIN_PAGE_TITLE = "Live365 Internet Radio Network - Listen to Free Music, Online Radio";
 	private final String EXPECTED_PAGE_TITLE_TEMPLATE = "Listen to Free %s Music Online - Live365 Internet Radio";
 	private  String baseUrl = "http://www.live365.com/new/index.live/";
-	final File file = new File("C:\\Users\\Alex\\AppData\\Roaming\\Apple Computer\\Safari\\Cookies\\Cookies.binarycookies");
+	
 
 	private  List<String> getListOfGenres(){			
 		List<String> strListOfGenreTopStations = new ArrayList<String>();
 		
 		//						navigate to genres tech cloud page		
 		driver = getDriver();
-		driver.get(baseUrl);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get(baseUrl);
+		
 		
 		driver.findElement(By.xpath(".//*[@class='headerlinks']//li[1]/a")).click();			
 		driver.switchTo().frame("contentFrame");
